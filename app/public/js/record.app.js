@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-var patientRecordApp = new Vue({
-  el: '#patientRecordApp',
-  data: {
-    patients: []
-  },
-  methods: {
-    fetchPatients() {
-      fetch('dummy.php')
-      .then(response => response.json())
-      .then(json => { patientRecordApp.patients = json })
-    }
-  },
-  created() {
-=======
 var patientRecordsApp = new Vue({
   el: '#patientRecordsApp',
   data: {
@@ -48,7 +33,6 @@ var patientRecordsApp = new Vue({
   }, // end methods
   created() {
     this.handleReset();
->>>>>>> pr/7
     this.fetchPatients();
   }
 });

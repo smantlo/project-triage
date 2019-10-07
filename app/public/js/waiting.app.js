@@ -5,7 +5,6 @@ var waitingApp = new Vue({
   },
   methods: {
     fetchPatients() {
-<<<<<<< HEAD
       fetch('dummy.php')
       .then( response => response.json() )
       .then( json => {waitingApp.patients = json})
@@ -16,17 +15,11 @@ var waitingApp = new Vue({
       // .then(function(response) {return response.json()})
       // .then(function(json) {waitingApp.people = json});
 
-=======
-      fetch('api/waiting/')
-      .then(response => response.json())
-      .then(json => { waitingApp.patients = json })
->>>>>>> pr/7
     }
   },
   created() {
     this.fetchPatients();
   }
-<<<<<<< HEAD
 })
 
 
@@ -57,6 +50,3 @@ var waitingApp = new Vue({
 //   }
 //
 // })
-=======
-});
->>>>>>> pr/7
