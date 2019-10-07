@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var patientRecordApp = new Vue({
   el: '#patientRecordApp',
   data: {
@@ -11,6 +12,43 @@ var patientRecordApp = new Vue({
     }
   },
   created() {
+=======
+var patientRecordsApp = new Vue({
+  el: '#patientRecordsApp',
+  data: {
+    patients: [],
+    recordPatient: {}
+  },
+  methods: {
+    fetchPatients() {
+      fetch('api/records/')
+      .then(response => response.json())
+      .then(json => { patientRecordsApp.patients = json })
+    },
+    handleSubmit(event) {
+      // fetch(url, {
+      //   method: 'post',
+      //   data: this.recordPatient
+      // })
+      // .then( ... )
+      this.patients.push( this.recordPatient );
+      this.handleReset();
+    },
+    handleReset() {
+      this.recordPatient = {
+        firstName: '',
+        lastName: '',
+        dob: '',
+        sexAtBirth: ''
+      }
+    },
+    handleRowClick(patient) {
+      patientTriageApp.patient = patient;
+    }
+  }, // end methods
+  created() {
+    this.handleReset();
+>>>>>>> pr/7
     this.fetchPatients();
   }
 });
